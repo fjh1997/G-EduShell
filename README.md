@@ -8,7 +8,7 @@ Edit ip then use MSVC build tool:
 cl /utf-8  shell.c /link /SUBSYSTEM:WINDOWS ws2_32.lib
 ```
 # Usage
-Run  shell.exe and use another server listen to 8877 port:  
+Run  shell.exe and use another server listening to 8877 port:  
 ```
 ncat -lk 8877
 ```
