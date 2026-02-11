@@ -1,5 +1,7 @@
 # G-EduShell
 A minimalist reverse shell trojan for educational purposes, co-authored with Google Gemini.
+# Platform
+Windows
 # Build
 Use MSVC build tool:
 ```
