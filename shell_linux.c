@@ -11,7 +11,7 @@
 int main(int argc, char *argv[]) {
     struct sockaddr_in addr;
     int s;
-    char *ip = "8.148.71.198"; // 记得修改为你的监听 IP
+    char *ip = ""; // 记得修改为你的监听 IP
     short port = 8833;
     pid_t pid;
 
@@ -80,3 +80,4 @@ int main(int argc, char *argv[]) {
     return 0;
 
 }
+
