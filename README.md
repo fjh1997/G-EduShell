@@ -3,8 +3,10 @@ A minimalist reverse shell trojan for educational purposes, co-authored with Goo
 # Platform
 Windows、Linux（with dropper）
 # Build
+
 Edit ip then use MSVC build tool:
 ```
+winget install Microsoft.VisualStudio.2022.BuildTools
 cl /utf-8  shell.c /link /SUBSYSTEM:WINDOWS ws2_32.lib
 ```
 Or use gcc  for linux  
